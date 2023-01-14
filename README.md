@@ -8,7 +8,7 @@ To control the radio panels within a flight simulator, using a rotary encoder an
 
 #
 ## Single rotary encoder operation
-To accommodate single rotary encoder operation, the control logic is simplified so that the click of the button has two modes:
+To accommodate a single rotary encoder operation, the control logic is designed so that the click of the button is switching between two control modes:
 - Mode 1: control of MHz part of the frequency
     - Button logic: Switch to Mode 2
 - Mode 2: control of KHz part of the frequency
@@ -42,4 +42,3 @@ Libraries for Arduino:
 - Configure the device settings (PORT and Board)
 - Start MFS20, wait for MFS20 and WASM indicators to turn "green"
 - Press "Start" and observe "Boards" indicator to turn "green"
-
