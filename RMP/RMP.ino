@@ -19,11 +19,14 @@ TM1637_6D screenStdby(scrStdbyCLK, scrStdbyDIO);
 TM1637_6D screenActive(scrActiveCLK, scrActiveDIO);
 BitsAndDroidsFlightConnector* connector = new BitsAndDroidsFlightConnector;
 
+
 bool skip = false;
 bool readySwap = false; 
 long oldMhzPos = -999;
 long oldKhzPos = -999;
 long newMhzPos, newKhzPos;
+long newPos, oldPos;
+int cmdInc, cmdDec = 0;
 String Com1ActiveFreq, Com1StdbyFreq = "";
 String oldCom1ActiveFreq, oldCom1StdbyFreq = "";
 
@@ -67,49 +70,44 @@ void loop()
   // Rotary control
   if(!readySwap)
   {
-    newMhzPos = rotary.read();
-    if(newMhzPos != oldMhzPos)
-    {
-      skip = !skip;
-      if(newMhzPos < oldMhzPos)
-      {
-        if(!skip) Serial.println(sendCommands::sendCom1WholeInc);
-      }
-      else
-      {
-        if(!skip) Serial.println(sendCommands::sendCom1WholeDec);
-      }
-
-      oldMhzPos = newMhzPos; 
-    }
+    newPos = newMhzPos;
+    oldPos = oldMhzPos;
+    cmdInc = sendCommands::sendCom1WholeInc;
+    cmdDec = sendCommands::sendCom1WholeDec;
   }
   else
   {
-    newKhzPos = rotary.read();
-    if(newKhzPos != oldKhzPos)
-    {
-      skip = !skip;
-      if(newKhzPos < oldKhzPos)
-      {
-        if(!skip) Serial.println(sendCommands::sendCom1FractInc);
-      }
-      else
-      {
-        if(!skip) Serial.println(sendCommands::sendCom1FractDecr);
-      }
+    newPos = newKhzPos;
+    oldPos = oldKhzPos;
+    cmdInc = sendCommands::sendCom1FractInc;
+    cmdDec = sendCommands::sendCom1FractDecr;
+  } 
 
-      oldKhzPos = newKhzPos; 
+  newPos = rotary.read();
+  if(newPos != oldPos)
+  {
+    skip = !skip;
+    if(newPos < oldPos)
+    {
+      if(!skip) Serial.println(cmdInc);
     }
+    else
+    {
+      if(!skip) Serial.println(cmdDec);
+    }
+
+    oldPos = newPos; 
   }
+
+  if(!readySwap) 
+    oldMhzPos = oldPos;
+  else
+    oldKhzPos = oldPos;
 
   // Rotary button
   if(digitalRead(rotBtn) == LOW)
   {
-    if(readySwap)
-    {
-      Serial.println(sendCommands::sendSwapCom1);
-    }
-
+    if(readySwap) Serial.println(sendCommands::sendSwapCom1);
     readySwap = !readySwap;
     delay(300);
   }
