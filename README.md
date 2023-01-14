@@ -1,5 +1,7 @@
 # Radio Management Panel
-A minimalistic control panel for MFS20 flight simulators, functionally resembling the RMP of Airbus A320 aircraft
+A minimalistic control panel for MFS20 flight simulators, functionally resembling the RMP of Airbus A320 aircraft.
+
+<img title="The OEM RMP panel on the Airbus A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="70%">
 
 #
 ## Purpose
@@ -26,7 +28,7 @@ To accommodate a single rotary encoder operation, the control logic is designed 
 - [Arduino Nano](https://store.arduino.cc/products/arduino-nano)
 - Filter capacitors on the 5V rail:
     - 100uF Electrolytic
-    - 10nF Polypropylene (MKP)
+    - 10nF Polypropylene
 
 #
 ## Dependencies
@@ -41,7 +43,7 @@ Libraries for Arduino:
 #
 ## Connection to MFS20
 - Get the [Bits&Droids Flight Connector ](https://www.bitsanddroids.com/release-notes-1-6-0/)
-- Create or import the Profile (Active and Standby COM1 freqs)
+- Create(/import) the Profile (Active and Standby COM1 freqs)
 - Connect the RMP device to a USB port
 - Configure the device settings (PORT and Board)
 - Start MFS20, wait for MFS20 and WASM indicators to turn "green"
