@@ -16,6 +16,10 @@ To accommodate a single rotary encoder operation, the control logic is designed 
 
 
 #
+## Video demonstration
+[![Watch on Youtube](https://img.youtube.com/vi/Up-8f32O-Tk/0.jpg)](https://www.youtube.com/watch?v=Up-8f32O-Tk)
+
+#
 ## Components
 - 2x [TM1637](https://www.rlocman.ru/i/File/2020/04/03/Datasheet_TM1637.pdf), 6-digit, 7-segment display, orange backlight
 - [EC11 Rotary encoder](https://www.farnell.com/datasheets/1837001.pdf)
