@@ -1,0 +1,28 @@
+{
+    "outputs": [
+        {
+            "cbText": "Com 1 active",
+            "dataType": 0,
+            "id": 13,
+            "metric": "Khz",
+            "offset": 93,
+            "outputName": "COM ACTIVE FREQUENCY:1",
+            "prefix": 900,
+            "type": 0,
+            "updateEvery": 0
+        },
+        {
+            "cbText": "Com 1 standby",
+            "dataType": 0,
+            "id": 16,
+            "metric": "Khz",
+            "offset": 0,
+            "outputName": "COM STANDBY FREQUENCY:1",
+            "prefix": 901,
+            "type": 0,
+            "updateEvery": 0
+        }
+    ],
+    "setId": 0,
+    "setName": "Nano"
+}

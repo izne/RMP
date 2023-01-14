@@ -22,13 +22,10 @@ BitsAndDroidsFlightConnector* connector = new BitsAndDroidsFlightConnector;
 
 bool skip = false;
 bool readySwap = false; 
-long oldMhzPos = -999;
-long oldKhzPos = -999;
-long newMhzPos, newKhzPos;
-long newPos, oldPos;
 int cmdInc, cmdDec = 0;
-String Com1ActiveFreq, Com1StdbyFreq = "";
-String oldCom1ActiveFreq, oldCom1StdbyFreq = "";
+long oldMhzPos, oldKhzPos = -999;
+long newMhzPos, newKhzPos, newPos, oldPos;
+String Com1ActiveFreq, Com1StdbyFreq, oldCom1ActiveFreq, oldCom1StdbyFreq = "";
 
 
 void setup()
@@ -56,13 +53,15 @@ void loop()
   Com1StdbyFreq  = connector->getStandbyCom1();
 
   // Screen Standby
-  if(!Com1StdbyFreq.equals(oldCom1StdbyFreq)){
+  if(!Com1StdbyFreq.equals(oldCom1StdbyFreq))
+  {
       screenStdby.displayFloat(Com1StdbyFreq.toFloat() / 1000);
       oldCom1StdbyFreq = Com1StdbyFreq;
   }
 
   // Screen Active
-  if(!oldCom1ActiveFreq.equals(Com1ActiveFreq)){
+  if(!oldCom1ActiveFreq.equals(Com1ActiveFreq))
+  {
       screenActive.displayFloat(Com1ActiveFreq.toFloat() / 1000);
       oldCom1ActiveFreq = Com1ActiveFreq;
   } 
@@ -70,6 +69,7 @@ void loop()
   // Rotary control
   if(!readySwap)
   {
+    // Mode 1
     newPos = newMhzPos;
     oldPos = oldMhzPos;
     cmdInc = sendCommands::sendCom1WholeInc;
@@ -77,6 +77,7 @@ void loop()
   }
   else
   {
+    // Mode 2
     newPos = newKhzPos;
     oldPos = oldKhzPos;
     cmdInc = sendCommands::sendCom1FractInc;
@@ -95,8 +96,7 @@ void loop()
     {
       if(!skip) Serial.println(cmdDec);
     }
-
-    oldPos = newPos; 
+    oldPos = newPos;
   }
 
   if(!readySwap) 

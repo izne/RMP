@@ -1,11 +1,11 @@
 # Radio Management Panel
 A minimalistic control panel for MFS20 flight simulators, functionally resembling the RMP of Airbus A320 aircraft.
 
-<img title="The OEM RMP panel on the Airbus A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="70%">
+<img title="The OEM RMP panel on the Airbus A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="480px">
 
 #
 ## Purpose
-To control the radio panels within a flight simulator, using a rotary encoder and two 7-segment displays for Active and Standby frequencies (COM1-only at this time).
+To control the COM1 radio panel within a flight simulator.  Uses a rotary encoder and two 7-segment displays for Active and Standby frequencies.
 
 
 #
@@ -14,12 +14,12 @@ To accommodate a single rotary encoder operation, the control logic is designed 
 - Mode 1: control of MHz part of the frequency
     - Button logic: Switch to Mode 2
 - Mode 2: control of KHz part of the frequency
-    - Button logic: Send "SWAP" signal and go back to Mode 1
+    - Button logic: Send "SWAP" signal and go switch to Mode 1
 
 
 #
 ## Video demonstration
-[![Watch on Youtube](https://img.youtube.com/vi/Up-8f32O-Tk/0.jpg)](https://www.youtube.com/watch?v=Up-8f32O-Tk)
+[![Watch on Youtube](https://img.youtube.com/vi/Up-8f32O-Tk/0.jpg)](https://www.youtube.com/watch?v=Up-8f32O-Tk){:target="_blank"}
 
 #
 ## Components
