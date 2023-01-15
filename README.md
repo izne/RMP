@@ -1,7 +1,7 @@
 # Radio Management Panel
 A minimalistic control panel for MFS20 flight simulators, functionally resembling the RMP of Airbus A320 aircraft.
 
-<img title="The OEM RMP panel on the Airbus A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="480px">
+<img title="The OEM RMP panel on the Airbus A320, image by SIM-on-A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="480px">
 
 #
 ## Purpose
@@ -12,14 +12,14 @@ To control the COM1 radio panel within a flight simulator.  Uses a rotary encode
 ## Single rotary encoder operation
 To accommodate a single rotary encoder operation, the control logic is designed so that the click of the button is switching between two control modes:
 - Mode 1: control of MHz part of the frequency
-    - Button logic: Switch to Mode 2
+    - Button click: Switches to Mode 2
 - Mode 2: control of KHz part of the frequency
-    - Button logic: Send "SWAP" signal and go switch to Mode 1
+    - Button click: Sends "SWAP" signal and switches to Mode 1
 
 
 #
 ## Video demonstration
-[![Watch on Youtube](https://img.youtube.com/vi/Up-8f32O-Tk/0.jpg)](https://www.youtube.com/watch?v=Up-8f32O-Tk){:target="_blank"}
+[![Watch on Youtube](https://img.youtube.com/vi/cJvjje6fKA4/0.jpg)](https://www.youtube.com/watch?v=cJvjje6fKA4)
 
 #
 ## Components
@@ -42,7 +42,7 @@ Libraries for Arduino:
 
 #
 ## Connection to MFS20
-- Get the [Bits&Droids Flight Connector ](https://www.bitsanddroids.com/release-notes-1-6-0/)
+- Get the [Bits&Droids Flight Connector](https://www.bitsanddroids.com/release-notes-1-6-0/)
 - Create(/import) the Profile (Active and Standby COM1 freqs)
 - Connect the RMP device to a USB port
 - Configure the device settings (PORT and Board)
