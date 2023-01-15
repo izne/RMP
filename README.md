@@ -18,7 +18,7 @@ To accommodate a single rotary encoder operation, the control logic is designed 
 
 
 #
-## Video demonstration
+## Demonstration
 [![Watch on Youtube](https://img.youtube.com/vi/cJvjje6fKA4/0.jpg)](https://www.youtube.com/watch?v=cJvjje6fKA4)
 
 #
@@ -42,9 +42,6 @@ Libraries for Arduino:
 
 #
 ## Connection to MFS20
-- Get the [Bits&Droids Flight Connector](https://www.bitsanddroids.com/release-notes-1-6-0/)
-- Create(/import) the Profile (Active and Standby COM1 freqs)
-- Connect the RMP device to a USB port
-- Configure the device settings (PORT and Board)
-- Start MFS20, wait for MFS20 and WASM indicators to turn "green"
-- Press "Start" and observe "Boards" indicator to turn "green"
+- Download and install the [Bits&Droids Flight Connector](https://www.bitsanddroids.com/release-notes-1-6-0/)
+- Import the [Profile](RMP.json) (or create youself the outputs: Active and Standby COM1 frequencies)
+- Connect the Nano to a USB port and configure the device settings before hitting Start
