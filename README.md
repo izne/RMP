@@ -1,7 +1,8 @@
-# Radio Management Panel
-A minimalistic control panel for MFS20 flight simulator radio panel, functionally resembling the THALES PN C12848CA01 (on A320)
+# Really Minimalistic Panel
+A minimalistic control panel for MFS20 flight simulator, that can control various panels in the cockpit, such as: COM, NAV, Transponder, FCU, etc.
 
 <img title="The OEM RMP panel on the Airbus A320, image by SIM-on-A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="480px">
+<img title="The OEM FCU panel on the Airbus A320, image by Soarbywire" src="https://soarbywire.files.wordpress.com/2017/01/l1010492.jpg?w=610" width="480px">
 
 #
 ## Purpose
@@ -28,6 +29,8 @@ For the time being here, lets call this one RMP+ and use if for prototyping.
 COM1, (NAV1, Transponder)
 A new switch button will toggle between the modes.
 An LED could indicate (a label) in which model the panel is.
+
+<img title="The OEM FCU panel on the Airbus A320, image by Soarbywire" src="/images/rmp_compact.PNG" width="480px">
 
 #
 ## Two 7-segment displays for "COM1 Active" and "COM1 StandBy" frequencies
@@ -58,7 +61,7 @@ Coming soon
 ## Dependencies
 Libraries for Arduino:
 
-[RMP-mod FlightSimLibrary by Bits&Droids](/BitsAndDroidsFlightSimLibrary)
+[FlightSimLibrary by Bits&Droids (RMP-mod )](BitsAndDroidsFlightSimLibrary)
 
 [TM1637_6D by TinyTronics](https://github.com/TinyTronics/TM1637_6D)
 

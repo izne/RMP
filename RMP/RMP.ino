@@ -17,14 +17,25 @@
 enum controlModes { 
   MODE_COM = 1, 
   MODE_NAV = 2, 
-  MODE_TRANSPONDER = 3
+  MODE_XPDR= 3,
+  MODE_ILS = 4,
+  MODE_VOR = 5,
+  MODE_ADF = 6,
+  MODE_DME = 7
+};
+
+enum fcuModes {
+  MODE_ALT = 1,
+  MODE_HDG = 2,
+  MODE_SPD = 3,
+  MODE_VS  = 4
 };
 
 Encoder rotary(rotCLK, rotDTA);
 controlModes currentMode = MODE_COM;
+TM1637_6D screenAlt(scrAltCLK, scrAltDIO);
 TM1637_6D screenStdby(scrStdbyCLK, scrStdbyDIO);
 TM1637_6D screenActive(scrActiveCLK, scrActiveDIO);
-TM1637_6D screenAlt(scrAltCLK, scrAltDIO);
 BitsAndDroidsFlightConnector* connector = new BitsAndDroidsFlightConnector;
 
 bool skip = false;
