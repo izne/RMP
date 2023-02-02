@@ -1,5 +1,5 @@
 # Radio Management Panel
-A minimalistic control panel for MFS20 flight simulators, functionally resembling the RMP of Airbus A320 aircraft.
+A minimalistic control panel for MFS20 flight simulator radio panel, functionally resembling the THALES PN C12848CA01 (on A320)
 
 <img title="The OEM RMP panel on the Airbus A320, image by SIM-on-A320" src="https://sim-on-a320.com/wp-content/uploads/2017/12/RMP_OEM1-768x576.jpg" width="480px">
 
@@ -10,11 +10,31 @@ To control the COM1 radio panel within a flight simulator.  Uses a rotary encode
 
 #
 ## Single rotary encoder operation
+COM1
 To accommodate a single rotary encoder operation, the control logic is designed so that the click of the button is switching between two control modes:
 - Mode 1: control of MHz part of the frequency
     - Button click: Switches to Mode 2
 - Mode 2: control of KHz part of the frequency
     - Button click: Sends "SWAP" signal and switches to Mode 1
+
+#
+## Extending the project
+It was quickly obvious that only a radio panel will not be enough. Especially when the screens can be re-used on multiple panels, like NAV, ILS, ADF, DME, FCU, Transponder.
+So at least one fork of this could be established on this path of making "universal" device, that can control multiple panels, in a minimalistic way.
+For the time being here, lets call this one RMP+ and use if for prototyping.
+
+#
+## RMP+ new modes
+COM1, (NAV1, Transponder)
+A new switch button will toggle between the modes.
+An LED could indicate (a label) in which model the panel is.
+
+#
+## Two 7-segment displays for "COM1 Active" and "COM1 StandBy" frequencies
+
+## Additional 7-segment display for FCU mixed mode: ALT, HDG, SPD
+As there are still free pins, another display could be attached to be used for the FCU.
+In the example, a bigger (0.5") 6-digit 7-segment display is connected. It can be used for showing three different values of main importance on the FCU: Altitude, Speed and Heading values. 
 
 
 #
@@ -31,10 +51,14 @@ To accommodate a single rotary encoder operation, the control logic is designed 
     - 10nF Polypropylene
 
 #
+## Schematic
+Coming soon
+
+#
 ## Dependencies
 Libraries for Arduino:
 
-[FlightSimLibrary by Bits&Droids](https://github.com/BitsAndDroids/BitsAndDroidsFlightSimLibrary)
+[RMP-mod FlightSimLibrary by Bits&Droids](/BitsAndDroidsFlightSimLibrary)
 
 [TM1637_6D by TinyTronics](https://github.com/TinyTronics/TM1637_6D)
 

@@ -5,7 +5,7 @@
             "dataType": 0,
             "id": 13,
             "metric": "Khz",
-            "offset": 93,
+            "offset": 0,
             "outputName": "COM ACTIVE FREQUENCY:1",
             "prefix": 900,
             "type": 0,
@@ -20,6 +20,50 @@
             "outputName": "COM STANDBY FREQUENCY:1",
             "prefix": 901,
             "type": 0,
+            "updateEvery": 0
+        },
+        {
+            "cbText": "NAV 1 active",
+            "dataType": 0,
+            "id": 18,
+            "metric": "KHz",
+            "offset": 0,
+            "outputName": "NAV ACTIVE FREQUENCY:1",
+            "prefix": 910,
+            "type": 0,
+            "updateEvery": 0
+        },
+        {
+            "cbText": "NAV 1 standby",
+            "dataType": 0,
+            "id": 19,
+            "metric": "KHz",
+            "offset": 0,
+            "outputName": "NAV STANDBY FREQUENCY:1",
+            "prefix": 911,
+            "type": 0,
+            "updateEvery": 0
+        },
+        {
+            "cbText": "Fenix A320 FCU ALT",
+            "dataType": 0,
+            "id": 9001,
+            "metric": "",
+            "offset": 20,
+            "outputName": "(L:MAGIC_FCU_ALT_VALUE)",
+            "prefix": 9001,
+            "type": 98,
+            "updateEvery": 0
+        },
+        {
+            "cbText": "A310 FCU Altitude",
+            "dataType": 0,
+            "id": 9002,
+            "metric": "",
+            "offset": 24,
+            "outputName": "(L:A310_Altitude_Dial)",
+            "prefix": 9002,
+            "type": 98,
             "updateEvery": 0
         }
     ],
