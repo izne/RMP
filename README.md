@@ -6,7 +6,7 @@ A minimalistic control panel for MFS20 flight simulator, that can control variou
 
 #
 ## Purpose
-To control the COM1 radio panel within a flight simulator.  Uses a rotary encoder and two 7-segment displays for Active and Standby frequencies.
+To control the various panels within an MFS20 flight simulator. Uses a rotary encoder and two 7-segment displays to dial-in frequencies, altitudes and etc.
 
 
 #
@@ -28,17 +28,18 @@ For the time being here, lets call this one RMP+ and use if for prototyping.
 ## RMP+ new modes
 COM1, (NAV1, Transponder)
 A new switch button will toggle between the modes.
-An LED could indicate (a label) in which model the panel is.
+An LED indicates (label) in which mode the panel is.
 
-<img title="The OEM FCU panel on the Airbus A320, image by Soarbywire" src="/images/rmp_compact.PNG" width="480px">
+<img title="Minimal code as well" src="/images/rmp_compact.PNG" width="480px">
 
 #
 ## Two 7-segment displays for "COM1 Active" and "COM1 StandBy" frequencies
+Initial setup features two 6-digit 7-segment displays using the TM1637 driver.
 
-## Additional 7-segment display for FCU mixed mode: ALT, HDG, SPD
+## Additional components for FCU mixed mode: ALT, HDG, SPD
 As there are still free pins, another display could be attached to be used for the FCU.
 In the example, a bigger (0.5") 6-digit 7-segment display is connected. It can be used for showing three different values of main importance on the FCU: Altitude, Speed and Heading values. 
-
+Additional EC11 is to be used to dial and switch between the submodes.
 
 #
 ## Demonstration
@@ -58,10 +59,32 @@ In the example, a bigger (0.5") 6-digit 7-segment display is connected. It can b
 Coming soon
 
 #
+## AVR Embedded C code
+Coming soon
+
+#
+## Typical usage
+- Power and MCU board
+    - Socket for the Arduino Nano board
+    - 5V Power line with reservoir and lowpass filter caps
+    - Connectors for the control and display board
+- Control and display board
+    - 7seg1 - 6 digit display that is suited for frequencies (123.455)
+    - 7seg2 - another screen to be used in the context of each panel/mode. E.g. Active/Standby freqs, Nav1 and Nav2 freqs, VOR/ILS freqs, etc.
+    - Rotary 1 used by the Radionav part of the panel
+    - Rotary 1 Button (Switch) e.g. MHz/KHz
+    - Rotary 2 used by the FCU part of the panel
+    - Rotary 2 Button (FCU Push)
+    - Button 1 (Radionav Mode): switches the radio/navigation modes COM, NAV, ILS, XPDR, etc.
+    - Button 2 (Radionav Action) Send (Swap the frequencies)
+    - Button 3 (FCU Mode): switches independently between FCU values (ALT, HDG, SPD)
+    
+
+#
 ## Dependencies
 Libraries for Arduino:
 
-[FlightSimLibrary by Bits&Droids (RMP-mod )](BitsAndDroidsFlightSimLibrary)
+[FlightSimLibrary by Bits&Droids (RMP-mod)](/Bits_and_Droids_flight_sim_library/)
 
 [TM1637_6D by TinyTronics](https://github.com/TinyTronics/TM1637_6D)
 
